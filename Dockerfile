@@ -14,6 +14,8 @@ RUN curl https://downloads.wkhtmltopdf.org/0.12/0.12.4/wkhtmltox-0.12.4_linux-ge
     && tar xf wkhtmltox-0.12.4.tar.xz \
     && cp -r wkhtmltox/* /usr/local/
 
+RUN apt-get install libxrender1 fontconfig xvfb -y
+
 ENV ORACLE /usr/local/oracle
 ENV ORACLE_HOME $ORACLE
 ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:$ORACLE
